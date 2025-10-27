@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triply | Arrangements</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index_en.html">
+        <img src="triply_logo.png" alt="Triply logo" height="40" />
+        <span class="fw-bold logo-text">Triply</span>
+      </a>
+
+      <div class="d-flex align-items-center order-lg-2 ms-auto gap-2">
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle lang-btn" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="currentLang">EN</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="langDropdown">
+            <li><a class="dropdown-item" href="#" data-lang="sr">Srpski</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+          </ul>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center gap-3">
+          <li class="nav-item"><a href="index_en.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="aranzmani_en.html" class="nav-link active">Arrangements</a></li>
+          <li class="nav-item"><a href="galerija_en.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="moj_nalog_en.html" class="nav-link">My Account</a></li>
+          <li class="nav-item"><a href="o_nama_en.html" class="nav-link">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="text-center mt-5">
+    <h2>Arrangements Overview</h2>
+    <div class="container mt-3 mb-4">
+      <div class="row justify-content-center g-3">
+        <div class="col-md-4">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search destinations..." />
+        </div>
+        <div class="col-md-3">
+          <select id="sortSelect" class="form-select">
+            <option value="none">Sort by...</option>
+            <option value="naziv">Name</option>
+            <option value="cena">Price</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="aranzmani container mb-5">
+    <h3 class="text-center mb-4">European Cities</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="kartica h-100">
+          <a href="barselona_en.html"><img src="img/evropski_gradovi/barselona/barselona1.jpg" class="card-img-top" alt="Barcelona" /></a>
+          <div class="p-3">
+            <h4>Barcelona</h4>
+            <p>Vibrant beaches, colorful streets, and Gaudí’s breathtaking masterpieces.</p>
+            <span class="cena">€459</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="kartica h-100">
+          <a href="pariz_en.html"><img src="img/evropski_gradovi/pariz/pariz1.jpeg" class="card-img-top" alt="Paris" /></a>
+          <div class="p-3">
+            <h4>Paris</h4>
+            <p>The City of Lights, romance, and timeless elegance by the Seine.</p>
+            <span class="cena">€499</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="kartica h-100">
+          <a href="rim_en.html"><img src="img/evropski_gradovi/rim/rim7.jpeg" class="card-img-top" alt="Rome" /></a>
+          <div class="p-3">
+            <h4>Rome</h4>
+            <p>Centuries of history, ancient wonders, and irresistible Italian charm.</p>
+            <span class="cena">€479</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="aranzmani container mb-5">
+    <h3 class="text-center mb-4">Summer 2025</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="kartica h-100">
+          <a href="egipat_en.html"><img src="img/leto/egipat/egipat2.jpeg" class="card-img-top" alt="Egypt" /></a>
+          <div class="p-3">
+            <h4>Egypt</h4>
+            <p>Golden sands, the majestic Nile, and timeless pyramids under the sun.</p>
+            <span class="cena">€699</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="kartica h-100">
+          <a href="maldivi_en.html"><img src="img/leto/maldivi/maldivi1.jpg" class="card-img-top" alt="Maldives" /></a>
+          <div class="p-3">
+            <h4>Maldives</h4>
+            <p>Turquoise lagoons, palm trees, and luxury villas above the ocean.</p>
+            <span class="cena">€999</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="kartica h-100">
+          <a href="santorini_en.html"><img src="img/leto/santorini/santorini1.jpeg" class="card-img-top" alt="Santorini" /></a>
+          <div class="p-3">
+            <h4>Santorini</h4>
+            <p>Iconic white houses, deep blue seas, and sunsets you’ll never forget.</p>
+            <span class="cena">€599</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="aranzmani container mb-5">
+    <h3 class="text-center mb-4">Winter 2025</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="kartica h-100">
+          <a href="colmar_en.html"><img src="img/zima/colmar/colmar1.jpg" class="card-img-top" alt="Colmar" /></a>
+          <div class="p-3">
+            <h4>Colmar</h4>
+            <p>A magical Christmas town filled with lights, colors, and Alsatian charm.</p>
+            <span class="cena">€549</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="kartica h-100">
+          <a href="jahorina_en.html"><img src="img/zima/jahorina/jahorina1.jpg" class="card-img-top" alt="Jahorina" /></a>
+          <div class="p-3">
+            <h4>Jahorina</h4>
+            <p>Snowy adventures, ski slopes, and cozy mountain cabins.</p>
+            <span class="cena">€399</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="kartica h-100">
+          <a href="lapland_en.html"><img src="img/zima/lapland/finska1.jpg" class="card-img-top" alt="Lapland" /></a>
+          <div class="p-3">
+            <h4>Lapland</h4>
+            <p>Experience the Northern Lights and meet Santa in a winter wonderland.</p>
+            <span class="cena">€699</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Copyright 2025, Jovana Čeganjac and Maja Špirto, University of Belgrade - School of Electrical Engineering</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme) {
+      document.documentElement.setAttribute("data-theme", currentTheme);
+      toggleBtn.textContent = currentTheme === "light" ? "🌞" : "🌙";
+    }
+    toggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const newTheme = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      toggleBtn.textContent = newTheme === "light" ? "🌞" : "🌙";
+    });
+  </script>
+
+  <script>
+    const currentLang = localStorage.getItem('lang') || 'en';
+    document.getElementById('currentLang').textContent = currentLang.toUpperCase();
+    const isEnglishPage = window.location.href.includes('_en.html');
+    if ((currentLang === 'en' && !isEnglishPage) || (currentLang === 'sr' && isEnglishPage)) {
+      const newUrl = currentLang === 'en' 
+        ? window.location.href.replace('.html', '_en.html') 
+        : window.location.href.replace('_en.html', '.html');
+      window.location.href = newUrl;
+    }
+    document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const newLang = e.target.getAttribute('data-lang');
+        localStorage.setItem('lang', newLang);
+        const newUrl = newLang === 'en' 
+          ? window.location.href.replace('.html', '_en.html') 
+          : window.location.href.replace('_en.html', '.html');
+        window.location.href = newUrl;
+      });
+    });
+  </script>
+
+  <!-- 🔍 Search + Sort -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
+    const sections = document.querySelectorAll(".aranzmani");
+
+    function filterCards() {
+      const searchTerm = searchInput.value.toLowerCase();
+      if (searchTerm.trim() === "") {
+        sections.forEach(sec => {
+          sec.style.display = "block";
+          sec.querySelectorAll(".kartica").forEach(card => card.parentElement.style.display = "block");
+        });
+        return;
+      }
+
+      sections.forEach(sec => {
+        sec.style.display = "none";
+        sec.querySelectorAll(".kartica").forEach(card => {
+          const title = card.querySelector("h4").textContent.toLowerCase();
+          const desc = card.querySelector("p").textContent.toLowerCase();
+          const price = card.querySelector(".cena").textContent.toLowerCase();
+          const match = title.includes(searchTerm) || desc.includes(searchTerm) || price.includes(searchTerm);
+          if (match) {
+            sec.style.display = "block";
+            card.parentElement.style.display = "block";
+          } else {
+            card.parentElement.style.display = "none";
+          }
+        });
+      });
+    }
+
+    function sortCards() {
+      const sortType = sortSelect.value;
+      const containerSections = document.querySelectorAll(".aranzmani .row");
+      containerSections.forEach(section => {
+        const cardArray = Array.from(section.children);
+        if (sortType === "naziv") {
+          cardArray.sort((a, b) => a.querySelector("h4").textContent.localeCompare(b.querySelector("h4").textContent));
+        } else if (sortType === "cena") {
+          cardArray.sort((a, b) => {
+            const priceA = parseInt(a.querySelector(".cena").textContent.replace("€", "").replace("€", ""));
+            const priceB = parseInt(b.querySelector(".cena").textContent.replace("€", "").replace("€", ""));
+            return priceA - priceB;
+          });
+        }
+        cardArray.forEach(card => section.appendChild(card));
+      });
+    }
+
+    searchInput.addEventListener("input", filterCards);
+    sortSelect.addEventListener("change", sortCards);
+  </script>
+</body>
+</html>

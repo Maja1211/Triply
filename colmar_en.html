@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triply | Colmar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index_en.html">
+        <img src="triply_logo.png" alt="Triply logo" height="40" />
+        <span class="fw-bold logo-text">Triply</span>
+      </a>
+
+      <div class="d-flex align-items-center order-lg-2 ms-auto gap-2">
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle lang-btn" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="currentLang">EN</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="langDropdown">
+            <li><a class="dropdown-item" href="#" data-lang="sr">Srpski</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+          </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center gap-3">
+          <li class="nav-item"><a href="index_en.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="aranzmani_en.html" class="nav-link active">Arrangements</a></li>
+          <li class="nav-item"><a href="galerija_en.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="moj_nalog_en.html" class="nav-link">My Account</a></li>
+          <li class="nav-item"><a href="o_nama_en.html" class="nav-link">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="text-center mt-5 mb-4">
+    <h2>Colmar – A Christmas Fairytale in the Heart of Alsace</h2>
+  </section>
+
+  <section class="container mb-5">
+    <div class="row g-3">
+      <div class="col-md-4"><img src="img/zima/colmar/colmar1.jpg" class="img-fluid rounded shadow" alt="Colmar 1"></div>
+      <div class="col-md-4"><img src="img/zima/colmar/colmar4.jpg" class="img-fluid rounded shadow" alt="Colmar 2"></div>
+      <div class="col-md-4"><img src="img/zima/colmar/colmarslika2.jpeg" class="img-fluid rounded shadow" alt="Colmar 3"></div>
+    </div>
+  </section>
+
+  <section class="container mb-5">
+    <h4>Trip Description</h4>
+    <p>
+      Welcome to <strong>Colmar</strong> – a fairytale town in the heart of Alsace,
+      known for its colorful houses, romantic canals, and magical Christmas atmosphere.
+    </p>
+    <p>
+      During the winter, Colmar turns into a <strong>Christmas wonderland</strong>:
+      twinkling lights, mulled wine, festive markets, and music fill every corner of this charming town.
+    </p>
+    <p>
+      Explore local museums, taste Alsatian wines, and experience French cuisine in cozy bistros.
+      With <strong>Triply</strong>, your holiday in Colmar will be filled with warmth, joy, and the spirit of Christmas.
+    </p>
+
+    <h5 class="mt-4">Package Prices</h5>
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr><th>Accommodation Type</th><th>Nights</th><th>Price per Person</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://www.booking.com/hotel/fr/ibis-colmar-centre.html" target="_blank">Hotel 3★</a></td>
+          <td>5</td>
+          <td>€549</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.booking.com/hotel/fr/mercure-colmar-centre-champ-de-mars.html" target="_blank">Hotel 4★</a></td>
+          <td>5</td>
+          <td>€649</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.booking.com/hotel/fr/la-maison-des-tetes.html" target="_blank">Hotel 5★</a></td>
+          <td>5</td>
+          <td>€799</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="container mb-5">
+    <h4>Book Your Trip</h4>
+    <form id="rezervacijaForma" class="mt-3">
+      <div class="mb-3">
+        <label for="ime" class="form-label">First Name</label>
+        <input type="text" id="ime" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="prezime" class="form-label">Last Name</label>
+        <input type="text" id="prezime" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefon" class="form-label">Phone Number</label>
+        <input type="tel" id="telefon" class="form-control" placeholder="+381 6x xxx xxxx" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="hotel" class="form-label">Select Hotel</label>
+        <select id="hotel" class="form-select" required>
+          <option value="" disabled selected>Select hotel...</option>
+          <option value="3★" data-price="549">Hotel 3★ – €549</option>
+          <option value="4★" data-price="649">Hotel 4★ – €649</option>
+          <option value="5★" data-price="799">Hotel 5★ – €799</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="datum" class="form-label">Select travel date</label>
+        <input type="date" id="datum" class="form-control" required>
+        <small id="datumInfo" class="text-muted"></small>
+      </div>
+
+      <div class="mb-3">
+        <p id="ukupnaCena" class="fw-bold"></p>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Copyright 2025, Jovana Čeganjac and Maja Špirto, University of Belgrade - School of Electrical Engineering</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const dateInput = document.getElementById("datum");
+    const dateInfo = document.getElementById("datumInfo");
+    const hotelSelect = document.getElementById("hotel");
+    const ukupnaCena = document.getElementById("ukupnaCena");
+    dateInput.min = new Date().toISOString().split("T")[0];
+
+    hotelSelect.addEventListener("change", () => {
+      const selected = hotelSelect.options[hotelSelect.selectedIndex];
+      ukupnaCena.textContent = selected.dataset.price ? `Total price: €${selected.dataset.price}` : "";
+    });
+
+    dateInput.addEventListener("change", () => {
+      const start = new Date(dateInput.value);
+      const end = new Date(start);
+      end.setDate(start.getDate() + 5);
+      const fmt = d => `${String(d.getDate()).padStart(2, "0")}.${String(d.getMonth() + 1).padStart(2, "0")}.${d.getFullYear()}`;
+      dateInfo.textContent = `Your trip will last from ${fmt(start)} to ${fmt(end)}.`;
+      dateInput.dataset.kraj = end.toISOString().split("T")[0];
+    });
+
+    document.getElementById("rezervacijaForma").addEventListener("submit", e => {
+      e.preventDefault();
+      const ime = document.getElementById("ime").value.trim();
+      const prezime = document.getElementById("prezime").value.trim();
+      const telefon = document.getElementById("telefon").value.trim();
+      const hotel = hotelSelect.value;
+      const datumPolaska = dateInput.value;
+      const datumPovratka = dateInput.dataset.kraj;
+      const cena = hotelSelect.options[hotelSelect.selectedIndex].dataset.price;
+
+      if (!hotel || !datumPolaska) {
+        alert("Please select both travel date and hotel!");
+        return;
+      }
+
+      const rezervacija = { destinacija: "Colmar", ime, prezime, telefon, hotel, cena, datumPolaska, datumPovratka };
+      const sve = JSON.parse(localStorage.getItem("rezervacije")) || [];
+      sve.push(rezervacija);
+      localStorage.setItem("rezervacije", JSON.stringify(sve));
+
+      alert(`Your trip to Colmar has been successfully booked!\nHotel: ${hotel}\nTotal: €${cena}\nFrom: ${datumPolaska}\nTo: ${datumPovratka}`);
+      e.target.reset();
+      dateInfo.textContent = "";
+      ukupnaCena.textContent = "";
+    });
+
+    const toggleBtn = document.getElementById("theme-toggle");
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme) {
+      document.documentElement.setAttribute("data-theme", currentTheme);
+      toggleBtn.textContent = currentTheme === "light" ? "🌞" : "🌙";
+    }
+    toggleBtn.addEventListener("click", () => {
+      const cur = document.documentElement.getAttribute("data-theme");
+      const next = cur === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      toggleBtn.textContent = next === "light" ? "🌞" : "🌙";
+    });
+
+    const currentLang = localStorage.getItem("lang") || "en";
+    document.getElementById("currentLang").textContent = currentLang.toUpperCase();
+    document.querySelectorAll(".dropdown-item[data-lang]").forEach(el => {
+      el.addEventListener("click", e => {
+        e.preventDefault();
+        const lang = e.target.dataset.lang;
+        if (lang === currentLang) return; 
+        localStorage.setItem("lang", lang);
+        const newUrl = lang === "en"
+          ? window.location.href.replace(".html", "_en.html")
+          : window.location.href.replace("_en.html", ".html");
+        window.location.href = newUrl;
+      });
+    });
+  </script>
+</body>
+</html>

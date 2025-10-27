@@ -1,0 +1,198 @@
+
+:root {
+  --bg-color: #0c0f14;
+  --text-color: #e9f3f8;
+  --accent: #00bcd4;
+  --accent-strong: #00e5ff;
+  --card-bg: #151a21;
+  --header-bg: #10141b;
+  --footer-bg: #10141b;
+}
+
+[data-theme="light"] {
+  --bg-color: #f9f9fb;
+  --text-color: #222;
+  --accent: #007f8a;
+  --accent-strong: #0099aa;
+  --card-bg: #ffffff;
+  --header-bg: #e9f3f8;
+  --footer-bg: #e9f3f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.navbar {
+  background-color: var(--header-bg) !important;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.logo-text {
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+.navbar .nav-link {
+  color: var(--text-color) !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--accent-strong) !important;
+}
+
+.navbar-toggler {
+  border-color: var(--accent);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M1 3h14v2H1zm0 4h14v2H1zm0 4h14v2H1z'/%3E%3C/svg%3E");
+}
+
+.navbar .order-lg-2 {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-left: auto !important;
+}
+
+
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--accent);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.8)),
+    url("img/hero5.avif") center/cover no-repeat;
+  text-align: center;
+  padding: 130px 20px;
+}
+
+.hero h2 {
+  font-size: 2.4rem;
+  color: var(--accent-strong);
+}
+
+
+.hero-text {
+  color: #ffffff !important;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+
+.btn {
+  background-color: var(--accent);
+  color: #fff !important;
+  border-radius: 25px;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: background 0.3s;
+  border: none;
+}
+.btn:hover {
+  background-color: var(--accent-strong);
+}
+
+
+.kartica {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.kartica:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
+}
+.kartica img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.kartica h3 {
+  margin: 15px;
+  color: var(--accent-strong);
+}
+.kartica p {
+  margin: 0 15px 10px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+.kartica .cena {
+  display: block;
+  margin: 0 15px 15px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+footer {
+  background-color: var(--footer-bg);
+  text-align: center;
+  padding: 20px;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+
+@media (max-width: 992px) {
+  .navbar .nav-link {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 90px 20px;
+  }
+}
+
+
+.carousel-item img {
+  object-fit: cover;
+  height: 200px;
+}
+video {
+  object-fit: cover;
+  height: 200px;
+}
+
+.rating span {
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: #777;
+  transition: color 0.2s;
+}
+
+.rating span:hover {
+  color: gold;
+}
+
+.rating span.active {
+  color: gold;
+}
+
+

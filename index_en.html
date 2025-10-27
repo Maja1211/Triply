@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triply | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=7" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index_en.html">
+        <img src="triply_logo.png" alt="Triply logo" height="40" />
+        <span class="fw-bold logo-text">Triply</span>
+      </a>
+      <div class="d-flex align-items-center order-lg-2 ms-auto gap-2">
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle lang-btn" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="currentLang">EN</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="langDropdown">
+            <li><a class="dropdown-item" href="#" data-lang="sr">Srpski</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+          </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center gap-3">
+          <li class="nav-item"><a href="index_en.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="aranzmani_en.html" class="nav-link">Arrangements</a></li>
+          <li class="nav-item"><a href="galerija_en.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="moj_nalog_en.html" class="nav-link">My Account</a></li>
+          <li class="nav-item"><a href="o_nama_en.html" class="nav-link">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero text-center d-flex flex-column justify-content-center align-items-center">
+    <div class="container">
+      <h2 class="mb-3">Explore the world with Triply</h2>
+      <p class="lead mx-auto mb-4 hero-text">The best offers for summer, winter, and European destinations – all in one place!</p>
+      <a href="aranzmani_en.html" class="btn btn-lg px-4 py-2">View trips</a>
+    </div>
+  </section>
+
+  <section class="container mt-5 mb-5">
+    <h3 class="text-center mb-4" id="topTitle">Top 3 Rated Trips</h3>
+    <div id="topRatedContainer" class="row g-4 justify-content-center"></div>
+  </section>
+
+  <footer>
+    <p>Copyright 2025, Jovana Čeganjac and Maja Špirto, University of Belgrade - School of Electrical Engineering</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    .top-card{border:0;box-shadow:0 6px 18px rgba(0,0,0,.07);height:100%}
+    .top-card .card-img-top{height:220px;object-fit:cover}
+    .top-card .card-body{display:flex;flex-direction:column}
+    .top-card .stars span{font-size:18px;line-height:1}
+    .top-card .stars .active{color:gold}
+    @media (min-width:1200px){.top-col{flex:0 0 32%;max-width:32%}}
+  </style>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme) {
+      document.documentElement.setAttribute("data-theme", currentTheme);
+      toggleBtn.textContent = currentTheme === "light" ? "🌞" : "🌙";
+    }
+    toggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const newTheme = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      toggleBtn.textContent = newTheme === "light" ? "🌞" : "🌙";
+    });
+
+    const currentLang = localStorage.getItem('lang') || 'en';
+    document.getElementById('currentLang').textContent = currentLang.toUpperCase();
+    const isEnglishPage = window.location.href.includes('_en.html');
+    if ((currentLang === 'en' && !isEnglishPage) || (currentLang === 'sr' && isEnglishPage)) {
+      const newUrl = currentLang === 'en'
+        ? window.location.href.replace('.html', '_en.html')
+        : window.location.href.replace('_en.html', '.html');
+      window.location.href = newUrl;
+    }
+    document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const newLang = e.target.getAttribute('data-lang');
+        localStorage.setItem('lang', newLang);
+        const newUrl = newLang === 'en'
+          ? window.location.href.replace('.html', '_en.html')
+          : window.location.href.replace('_en.html', '.html');
+        window.location.href = newUrl;
+      });
+    });
+
+    const proseci = JSON.parse(localStorage.getItem('proseci') || '{}');
+    const top3 = Object.entries(proseci).map(([dest, avg]) => ({dest, avg: parseFloat(avg)})).sort((a,b)=>b.avg-a.avg).slice(0,3);
+
+    const META = {
+      Pariz:{sr:'Pariz',en:'Paris',url_sr:'pariz.html',url_en:'pariz_en.html',imgs:['img/prolece/pariz/pariz1.jpg','img/evropski_gradovi/pariz/pariz1.jpeg','img/evropski_gradovi/pariz/pariz1.jpg','img/pariz/pariz1.jpg','triply_logo.png']},
+      Paris:{sr:'Pariz',en:'Paris',url_sr:'pariz.html',url_en:'pariz_en.html',imgs:['img/prolece/pariz/pariz1.jpg','img/evropski_gradovi/pariz/pariz1.jpeg','img/evropski_gradovi/pariz/pariz1.jpg','triply_logo.png']},
+      Maldivi:{sr:'Maldivi',en:'Maldives',url_sr:'maldivi.html',url_en:'maldivi_en.html',imgs:['img/leto/maldivi/maldivi1.jpg','img/leto/maldivi/maldivi1.jpeg','triply_logo.png']},
+      Maldives:{sr:'Maldivi',en:'Maldives',url_sr:'maldivi.html',url_en:'maldivi_en.html',imgs:['img/leto/maldivi/maldivi1.jpg','img/leto/maldivi/maldivi1.jpeg','triply_logo.png']},
+      Santorini:{sr:'Santorini',en:'Santorini',url_sr:'santorini.html',url_en:'santorini_en.html',imgs:['img/leto/santorini/santorini1.jpg','img/leto/santorini/santorini1.jpeg','triply_logo.png']},
+      Laponija:{sr:'Laponija',en:'Lapland',url_sr:'lapland.html',url_en:'lapland_en.html',imgs:['img/zima/finska/finska1.jpg','img/zima/lapland/lapland1.jpg','triply_logo.png']},
+      Lapland:{sr:'Laponija',en:'Lapland',url_sr:'lapland.html',url_en:'lapland_en.html',imgs:['img/zima/finska/finska1.jpg','img/zima/lapland/lapland1.jpg','triply_logo.png']},
+      Egipat:{sr:'Egipat',en:'Egypt',url_sr:'egipat.html',url_en:'egipat_en.html',imgs:['img/leto/egipat/egipat1.jpg','img/leto/egipat/egipat1.jpeg','triply_logo.png']},
+      Egypt:{sr:'Egipat',en:'Egypt',url_sr:'egipat.html',url_en:'egipat_en.html',imgs:['img/leto/egipat/egipat1.jpg','img/leto/egipat/egipat1.jpeg','triply_logo.png']},
+      Barselona:{sr:'Barselona',en:'Barcelona',url_sr:'barselona.html',url_en:'barselona_en.html',imgs:['img/prolece/barselona/barselona1.jpg','img/evropski_gradovi/barselona/barselona1.jpg','triply_logo.png']},
+      Barcelona:{sr:'Barselona',en:'Barcelona',url_sr:'barselona.html',url_en:'barselona_en.html',imgs:['img/prolece/barselona/barselona1.jpg','img/evropski_gradovi/barselona/barselona1.jpg','triply_logo.png']},
+      Rim:{sr:'Rim',en:'Rome',url_sr:'rim.html',url_en:'rim_en.html',imgs:['img/prolece/rim/rim1.jpg','img/evropski_gradovi/rim/rim1.jpg','triply_logo.png']},
+      Rome:{sr:'Rim',en:'Rome',url_sr:'rim.html',url_en:'rim_en.html',imgs:['img/prolece/rim/rim1.jpg','img/evropski_gradovi/rim/rim1.jpg','triply_logo.png']},
+      Jahorina:{sr:'Jahorina',en:'Jahorina',url_sr:'jahorina.html',url_en:'jahorina_en.html',imgs:['img/zima/jahorina/jahorina1.jpg','triply_logo.png']},
+      Kolmar:{sr:'Kolmar',en:'Colmar',url_sr:'colmar.html',url_en:'colmar_en.html',imgs:['img/prolece/colmar/colmar1.jpg','triply_logo.png']},
+      Colmar:{sr:'Kolmar',en:'Colmar',url_sr:'colmar.html',url_en:'colmar_en.html',imgs:['img/prolece/colmar/colmar1.jpg','triply_logo.png']}
+    };
+
+    function setBestImage(imgEl, list){
+      let i=0;
+      const tryNext=()=>{if(i<list.length){imgEl.src=list[i++];}};
+      imgEl.onerror=tryNext;
+      tryNext();
+    }
+
+    const wrap = document.getElementById('topRatedContainer');
+    wrap.innerHTML = '';
+
+    if(top3.length===0){
+      wrap.innerHTML = '<div class="col-12 col-lg-10"><div class="card top-card p-4 text-center"><p class="mb-2">No ratings yet. Rate some trips, then come back!</p><a href="aranzmani_en.html" class="btn btn-primary">Browse trips</a></div></div>';
+    }else{
+      top3.forEach(({dest,avg})=>{
+        const m = META[dest] || {sr:dest,en:dest,url_sr:'#',url_en:'#',imgs:['triply_logo.png']};
+        const title = m.en;
+        const href  = m.url_en;
+        const rounded = Math.round(avg);
+        const stars = Array.from({length:5},(_,i)=>'<span class="'+(i<rounded?'active':'')+'">★</span>').join('');
+        const col = document.createElement('div');
+        col.className = 'col-md-4 top-col';
+        col.innerHTML = '<div class="card top-card h-100"><img class="card-img-top" alt="'+title+'"><div class="card-body"><h5 class="card-title">'+title+'</h5><div class="d-flex align-items-center gap-2 mb-2"><div class="stars">'+stars+'</div><span class="text-muted">(Average: '+avg.toFixed(2)+')</span></div><a href="'+href+'" class="btn btn-primary mt-auto">View</a></div></div>';
+        wrap.appendChild(col);
+        const imgEl = col.querySelector('img');
+        setBestImage(imgEl, m.imgs);
+      });
+    }
+  </script>
+</body>
+</html>
